@@ -54,7 +54,24 @@ app.get('/dashboard', (req, res) => {
       <h1>Dashboard</h1>
       <p>Welcome, ${session.username}!</p>
       <p>Your role is: ${session.role}</p>
-      ${session.role === "admin" ?  '<a href="/flag.txt">Access the Flag</a>' : ''}
+      ${session.role === "admin" 
+      ? '<a href="/flag.txt">Access the Flag</a>' 
+      : `
+      <iframe src="https://giphy.com/embed/yx400dIdkwWdsCgWYp" 
+              width="480" 
+              height="269" 
+              style="display: block; margin: auto;" 
+              frameBorder="0" 
+              class="giphy-embed" 
+              allowFullScreen>
+      </iframe>
+      <p style="text-align: center;">
+          <a href="https://giphy.com/gifs/yx400dIdkwWdsCgWYp" target="_blank">
+              via GIPHY
+          </a>
+      </p>`
+  }
+  
       ${session.role === "admin" ? `
   <iframe src="https://giphy.com/embed/ysiCYZUJkW3XRb7k9K" 
           width="480" 
